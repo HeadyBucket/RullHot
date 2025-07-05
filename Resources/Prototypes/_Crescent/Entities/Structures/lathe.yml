@@ -92,33 +92,61 @@
       - DrugComponent
       - Sheet
       - RawMaterial
+      - CraftMaterials
   - type: Lathe
     idleState: base_machine
     runningState: base_machine_processing
     staticRecipes:
-    - PartyDrugs
     - Crash
     - Exile
     - Kaiser
     - Mechanite
     - Bloodeye
+    - Scalpel
+    - Retractor
+    - Cautery
+    - Drill
     - Saw
-    - BodyBag
+    - Hemostat
+    - BoneGel
+    - ClothingHandsGlovesNitrile
+    - ClothingMaskSterile
     - Brutepack
     - Ointment
     - Gauze
-    - Defibrillator
-    - Medkit
-    - MedkitAdvanced
-    - MedkitCombat
-    - HandLabeler
+    - DisposableSyringe
+    - HandheldHealthAnalyzer
+    - BodyBag
     - Beaker
     - LargeBeaker
     - Dropper
     - Jug
     - Syringe
-    - VehicleWheelchairFolded
-    - RollerBedSpawnFolded
+    dynamicRecipes:
+      - ClothingUniformJumpsuitSyndicateInterdyne
+      - ClothingBeltSyndicateWebbingInterdyne
+      - ClothingHeadHatSyndicateDoctor
+      - ClothingOuterArmorSyndicateApron
+      - ClothingHeadHelmetSyndicateBasicInterdyne
+      - ClothingOuterArmorSyndicateArmorvestInterdyne
+      - ClothingOuterHardsuitTraumasec
+      - DefibrillatorSyndicate
+      - OmnimedToolSyndieInterdyne
+      - CyberneticsPainEditorInterdyne
+      - CyberneticsAdrenalInterdyne
+      - CyberneticsBloodPumpInterdyne
+      - CrowbarLeftArmInterdyne
+      - CrowbarRightArmInterdyne
+      - SecHypoInterdyne
+      - CartridgeEphedrineInterdyne
+      - CartridgeTirizeneInterdyne
+      - CartridgeBicaridineInterdyne
+      - CartridgeSalineInterdyne
+      - CartridgeDermalineInterdyne
+      - CartridgePuncturaseInterdyne
+      - CartridgeAtropineInterdyne
+      - SyringeCase
+      - InterdyneOptics
   - type: Anchorable
     flags:
     - Anchorable
@@ -146,6 +174,16 @@
   name: pristine microforge
   description: Used to print equipment discovered through techdisks, or researched.
   components:
+  - type: MaterialStorage
+    dropOnDeconstruct: false #should drop ores instead of ingots/sheets
+    ignoreColor: true
+    canEjectStoredMaterials: true
+    whitelist:
+      tags:
+      - Sheet
+      - CraftMaterials
+      - Ingot
+      - RawMaterial
   - type: Sprite
     sprite: _Crescent/Structures/nanoforge.rsi
     layers:
@@ -222,19 +260,160 @@
       - ClothingHeadHatWelding
       - ClothingOuterSuitEmergency
       - ClothingHeadHelmetEVALarge # Frontier
-      - ArmorPlateSteelCraft
-      - ArmorPlatePlasteelCraft
-      - ArmorPlateNanoPolymerCraft
-      - ArmorPlateCeramicCraft
-      - ArmorPlateDurathreadCraft
-      # - ArmorPlatePlasmGlassaCraft # no sprite
-      - ArmorPlatePlasticCraft
-      - ArmorPlateHomelandCraft
-      - ArmorPlateKevlarCraft
-      - ArmorPlatePlasteelEncasedKevlarCraft
-      - ArmorPlateNanoCeramicCraft
     dynamicRecipes:
+      - ThrusterFlatpackAstronautics
+      - GyroscopeFlatpackAstronautics
+      - MiniGravityFlatpack
+      - ShuttleFlatpackAstronautics
+      - ClothingOuterHardsuitBasicAstronautics
+      - ClothingOuterHardsuitSpatioAstronautics
+      - ClothingShoesBootsMagAstronautics
+      - HandheldMassScannerAstronautics
+      - JetpackBlueFilledAstronautics
+      - ClothingOuterHardsuitPilotAstronautics
+      - ClothingOuterHardsuitVoidParamedAstronautics
+      - ClothingOuterHardsuitPrivateSecurityAstronautics
+      - ClothingShoesBootsMagbootsAstronautics
+      - JetpackMiniFilledAstronautics
+      - RCDEmptyAstronautics
+      - RCDAmmoAstronautics
+      - MiningDrill
+      - BorgModuleMining
+      - MechEquipmentDrill 
+      - ClothingMaskWeldingGas
+      - PowerCellHigh
+      - PowerCellMicrortg
+      - TurboItemRechargerCircuitboard
+      - SMESAdvancedMachineCircuitboard
+      - FlatpackerMachineCircuitboard
+      - PortableGeneratorPacmanMachineCircuitboard
+      - PortableGeneratorSuperPacmanMachineCircuitboard
+      - PortableGeneratorJrPacmanMachineCircuitboard
+      - PowerComputerCircuitboard #the actual solar panel itself should be in here
+      - SolarControlComputerCircuitboard
+      - SolarTrackerElectronics
+      - EmitterCircuitboard
+      - ThermomachineFreezerMachineCircuitBoard
+      - GasRecyclerMachineCircuitboard
+      - AlertsComputerCircuitboard
+      - RipleyHarness
+      - RipleyLArm
+      - RipleyRArm
+      - RipleyLLeg
+      - RipleyRLeg
+      - RipleyCentralElectronics
+      - RipleyPeripheralsElectronics
+      - MechEquipmentGrabber
+      - WelderExperimental
+      - PowerDrill
+      - JawsOfLife
+      - BorgModuleAdvancedTool
+      - BorgModuleRCD
+      - OreBagOfHolding
+      - MiningDrillDiamond
+      - MechEquipmentDrillDiamond
+      - RipleyMKIIHarness
+      - RipleyUpgradeKit
+      - ClothingBackpackHolding
+      - ClothingBackpackSatchelHolding
+      - ClothingBackpackDuffelHolding
+      - BasicMechatronics1Mechatronics
+      - PlastitaniumFibreAlloy1Mechatronics
       - Truncheon
+      - WeaponPistolMk58Mechatronics
+      - WeaponRifleM90GrenadeLauncherMechatronics
+      - MagazineRifleShrapnel
+      - MagazinePistolShrapnel
+      - MagazinePistolSubMachineGunShrapnel
+      - MagazineMagnumShrapnel
+      - MagazineLightRifleShrapnel
+      - Scalpel
+      - Retractor
+      - Cautery
+      - Drill
+      - Saw
+      - Hemostat
+      - BoneGel
+      - MothroachCubeBiochemical
+      - CowCubeBiochemical
+      - GoatCubeBiochemical
+      - ClothingHandsGlovesNitrile
+      - ClothingMaskSterile
+      - Brutepack
+      - Ointment
+      - Gauze
+      - SyringeCase
+      - DisposableSyringe
+      - HandheldHealthAnalyzer
+      - BodyBag
+      - Beaker
+      - LargeBeaker
+      - Dropper
+      - Jug
+      - Syringe
+      - Defibrillator
+      - SurveillanceCameraRouterCircuitboard
+      - SurveillanceCameraWirelessRouterCircuitboard
+      - SurveillanceWirelessCameraMovableCircuitboard
+      - SurveillanceWirelessCameraAnchoredCircuitboard
+      - SurveillanceCameraMonitorCircuitboard
+      - SurveillanceWirelessCameraMonitorCircuitboard
+      - TelecomServerCircuitboard
+      - ComputerTelevisionCircuitboard
+      - SynthesizerInstrument
+      - DawInstrumentMachineCircuitboard
+      - MassMediaCircuitboard
+      - JukeboxCircuitBoard
+      - FatExtractorMachineCircuitboard
+      - BiofabricatorMachineCircuitboard
+      - BiomassReclaimerMachineCircuitboard
+      - NodeScanner
+      - AnalysisComputerCircuitboard
+      - ArtifactAnalyzerMachineCircuitboard
+      - TechDiskComputerCircuitboard
+      - ReverseEngineeringMachineCircuitboard
+      - BasicElectronics1Electronics
+      - WeakLaserLocus1Electronics
+      - HardsuitElectronics1Electronics
+      - WeaponCivilianDisabler
+      - WeaponEnergyGunMini
+      - ClothingEyesNightVisionGoggles
+      - Terminus
+      - ClothingOuterHardsuitShanlinUnpainted
+      - BorgModuleGPS
+      - RadarConsoleCircuitboard
+      - EMPGrenadeElectronics
+      - AdvancedCapacitorStockPart
+      - AdvancedMatterBinStockPart
+      - NanoManipulatorStockPart
+      - RPED
+      - WeaponParticleDecelerator
+      - HoloprojectorField
+      - ClothingUniformJumpsuitSyndicateSuitCyberdawn
+      - ClothingUniformJumpsuitSyndicateLabCyberdawn
+      - ClothingUniformJumpsuitSyndicateSoldierCyberdawn
+      - ClothingOuterArmorCyberdawnPatriarch
+      - ClothingOuterArmorKendoBoguCyberdawn
+      - ClothingOuterHardsuitCybersun
+      - ClothingHeadHatPatriarch
+      - WeaponSubMachineGunAtreidesCyberdawn
+      - WeaponRifleAkCyberdawn
+      - WeaponRifleKrinkovCyberdawn
+      - WeaponPistolViperWoodCyberdawn
+      - PowerSinkCyberdawn
+      - MufflerFlatpack
+      - RadioJammerCyberdawn
+      - EmagCyberdawn
+      - WeaponLightMachineGunNCSPRPD
+      - WeaponRifleMayflower
+      - DnaScramblerImplanter
+      - EmpImplanter
+      - EnergyDagger
+      - ClothingOuterHardsuitSyndieMedicCyberdawn
+      - ClothingOuterHardsuitCybersunStealthCyberdawn
+      - MagazinePistolSpecialMindbreakerCyberdawn
+      - WeaponPistolPsiBreakerCyberdawn
+      - ClothingEyesThermalVisionGogglesCyberdawn
   - type: Machine
     board: MicroforgeCircuitboard
 

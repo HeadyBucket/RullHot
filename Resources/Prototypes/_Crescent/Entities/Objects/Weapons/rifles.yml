@@ -1,4 +1,102 @@
 - type: entity
+  name: IRM legionnaire 7.62x51mm
+  id: WeaponRifleDSMLegionnaire
+  parent: BaseWeaponRifle
+  description: An overengineered rifle, sharing multiple features with the C-20R SMG, such as a odd magazine angle and automatic magazine ejection. Chambered in 7.62x51mm USM rounds.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Objects/Weapons/Guns/legionnaire.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-0
+      map: ["enum.GunVisualLayers.Mag"]
+  - type: ItemSlots
+    slots:
+      gun_magazine:
+        name: Magazine
+        startingItem: MagazineRifle
+        insertSound: /Audio/Weapons/Guns/MagIn/batrifle_magin.ogg
+        ejectSound: /Audio/Weapons/Guns/MagOut/batrifle_magout.ogg
+        priority: 2
+        whitelist:
+          tags:
+            - MagazineRifle
+      gun_chamber:
+        name: Chamber
+        startingItem: CartridgeRifle
+        priority: 1
+        whitelist:
+          tags:
+            - CartridgeRifle
+  - type: Gun
+    shotsPerBurst: 3
+    availableModes:
+    - SemiAuto
+    - Burst
+    - FullAuto
+    burstFireRate: 6
+    fireRate: 6
+  - type: ChamberMagazineAmmoProvider
+    autoEject: true
+  - type: MagazineVisuals
+    magState: mag
+    steps: 1
+    zeroVisible: true
+  - type: Appearance
+
+- type: entity
+  name: PTA T3 Whisper 9x39mm
+  parent: BaseWeaponRifle
+  id: WeaponSubMachineGunPTAAsVal
+  description: A robust rifle with an inbuilt suppressor. Features a special fast-burst mode to increase hit probability. Chambered in 9x39mm caseless rounds.
+  components:
+  - type: Sprite
+    sprite: _Crescent/Objects/Weapons/Guns/asval.rsi
+    layers:
+      - state: base
+        map: ["enum.GunVisualLayers.Base"]
+      - state: mag-0
+        map: ["enum.GunVisualLayers.Mag"]
+  - type: Clothing
+    sprite: _Crescent/Objects/Weapons/Guns/asval.rsi
+  - type: ItemSlots
+    slots:
+      gun_magazine:
+        name: Magazine
+        startingItem: MagazineCaselessRifle
+        insertSound: /Audio/Weapons/Guns/MagIn/batrifle_magin.ogg
+        ejectSound: /Audio/Weapons/Guns/MagOut/batrifle_magout.ogg
+        priority: 2
+        whitelist:
+          tags:
+            - MagazineCaselessRifle
+      gun_chamber:
+        name: Chamber
+        startingItem: CartridgeCaselessRifle
+        priority: 1
+        whitelist:
+          tags:
+            - CartridgeCaselessRifle
+  - type: Gun
+    shotsPerBurst: 2
+    availableModes:
+    - Burst
+    - FullAuto
+    burstFireRate: 24
+    burstCooldown: 0.5
+    fireRate: 6
+    soundGunshot:
+      path: /Audio/Weapons/Guns/Gunshots/silenced.ogg
+      params:
+        volume: -14
+  - type: MagazineVisuals
+    magState: mag
+    steps: 1
+    zeroVisible: true
+  - type: Appearance
+
+- type: entity
   name: PTA XCR-6 Charge rifle 6x24mm
   parent: BaseWeaponRifle
   id: WeaponSpecialChargeRifle
@@ -306,7 +404,7 @@
 
 
 - type: entity
-  name: NCSP AKMS-74U Krinkov 7.62x51mm
+  name: NCSP AKMS-74U Krinkov 5.56x45mm
   parent: BaseWeaponRifle
   id: WeaponRifleKrinkov
   description: A shortened battle rifle, replicated from Terran designs by the Coalition - commonly attributed to terrorist groups. Cheap and easily made.
@@ -324,27 +422,27 @@
   - type: Clothing
     sprite: _Crescent/Objects/Weapons/Guns/krinkov.rsi
   - type: Gun
-    fireRate: 3
+    fireRate: 5
     soundGunshot:
       path: /Audio/Weapons/Guns/Gunshots/krinkov.ogg
   - type: ItemSlots
     slots:
       gun_magazine:
         name: Magazine
-        startingItem: MagazineRifle
+        startingItem: MagazineLightRifle
         insertSound: /Audio/Weapons/Guns/MagIn/ltrifle_magin.ogg
         ejectSound: /Audio/Weapons/Guns/MagOut/ltrifle_magout.ogg
         priority: 2
         whitelist:
           tags:
-            - MagazineRifle
+            - MagazineLightRifle
       gun_chamber:
         name: Chamber
-        startingItem: CartridgeRifle
+        startingItem: CartridgeLightRifle
         priority: 1
         whitelist:
           tags:
-            - CartridgeRifle
+            - CartridgeLightRifle
   - type: ContainerContainer
     containers:
       gun_magazine: !type:ContainerSlot

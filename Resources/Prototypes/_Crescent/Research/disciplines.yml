@@ -4,7 +4,7 @@
   color: "#D3D3D3"
   icon:
     sprite: _Crescent/Interface/Misc/research_disciplines.rsi
-    state: industrial
+    state: mechatronics
   tierPrerequisites:
     1: 0
     2: 0.75
@@ -16,7 +16,7 @@
   color: "#D3D3D3"
   icon:
     sprite: _Crescent/Interface/Misc/research_disciplines.rsi
-    state: arsenal
+    state: electronics
   tierPrerequisites:
     1: 0
     2: 0.75
@@ -28,7 +28,7 @@
   color: "#D3D3D3"
   icon:
     sprite: _Crescent/Interface/Misc/research_disciplines.rsi
-    state: experimental
+    state: astronautics
   tierPrerequisites:
     1: 0
     2: 0.75
@@ -40,7 +40,43 @@
   color: "#D3D3D3"
   icon:
     sprite: _Crescent/Interface/Misc/research_disciplines.rsi
-    state: civilianservices
+    state: biochemical
+  tierPrerequisites:
+    1: 0
+    2: 0.75
+    3: 0.75
+
+- type: techDiscipline
+  id: Interdyne
+  name: research-discipline-interdyne
+  color: "#FF6961"
+  icon:
+    sprite: _Crescent/Interface/Misc/research_disciplines.rsi
+    state: interdyne
+  tierPrerequisites:
+    1: 0
+    2: 0.75
+    3: 0.75
+
+- type: techDiscipline
+  id: Cyberdawn
+  name: research-discipline-cyberdawn
+  color: "#FF6961"
+  icon:
+    sprite: _Crescent/Interface/Misc/research_disciplines.rsi
+    state: cyberdawn
+  tierPrerequisites:
+    1: 0
+    2: 0.75
+    3: 0.75
+
+- type: techDiscipline
+  id: Imperial
+  name: research-discipline-imperial
+  color: "#eebc1d"
+  icon:
+    sprite: _Crescent/Interface/Misc/research_disciplines.rsi
+    state: imperial
   tierPrerequisites:
     1: 0
     2: 0.75
